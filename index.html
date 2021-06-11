@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>COMM 644 Final: Pizza App</title>
+</head>
+
+<header>
+
+<div class="container-fluid">
+<div class="row">
+    <div id="backgroundImage" class="col-12">
+        <div  id = text class="row">
+            <div class="col-xs-12 d-flex justify-content-center col-md-4 img-responsive"><img src="images/sistersLogo.png" alt="Sister's logo"></div>
+            <div class="col-xs-12 text-center col-md-8 text-white"><h1>Enjoy Our Delicious East Coast Style Pizza</h1></div>
+        </div>
+    </div>
+</div>
+</div>
+
+</header>
+
+
+
+<body>
+
+<!-- Delivery ----------------------------------------------------------------------- -->
+<div id="showDelivery" style="display:block">
+
+    <div class="container-fluid"></div>
+    <div id="delivery" class="row">
+
+    <div class="col-12">
+        <h2>Delivery Location</h2>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+    <form id ='deliveryInfo'>
+            
+        <label for="customerName">Name:</label><br>
+        <input type="text" id="customerName" name="customerName"><br>
+
+        <label for="address">Street Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="number">Apartment, suite, or room number:</label><br>
+        <input type="text" name="number" id="number" placeholder=" Optional"><br>
+
+        <label for="addressType">Address Type:</label><br>
+        <select name="addressType" id="addressType">
+            <option value="" disabled selected>Select an address type</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="business">Business</option>
+            <option value="campus">Campus</option>
+            <option value="hotel">Hotel Room</option>
+            <option value="dorm">Dorm</option>
+            <option value="other">Other</option>
+        </select>
+
+        <input type="text" name="otherBox" id="otherBox" placeholder="Please specify other" style="display: none"><br>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city"><br>
+    
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state"><br>
+
+        <label for="zip">Zip Code:</label><br>
+        <input type="text" id="zip" name="zip"><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email">
+    </div>
+
+
+
+    </div>
+
+
+<!-- Order ----------------------------------------------------------------------- -->
+
+<div id="order" class="row">
+
+    <div class="col-xs-12 col-md-6">
+        <h2>Build Your Pizza</h2><br>
+    </div>
+
+    <div class="col-xs-12 col-md-6" id="displayTotal"></div>
+
+    <div class="col-xs-12 col-md-6">
+
+        <div id="chooseDough">
+            <label for="radio">Choose your Dough:</label><br>
+
+            <input type="radio" id="handTossed" name="dough" value="handTossed">
+            <label for="handTossed">Hand Tossed</label><br>
+
+            <input type="radio" id="thinCrust" name="dough" value="thinCrust">
+            <label for="thinCrust">Thin Crust</label><br>
+
+            <input type="radio" id="newYork" name="dough" value="newYork">
+            <label for="newYork">New York Style</label><br>
+
+            <input type="radio" id="glutenFree" name="dough" value="glutenFree">
+            <label for="glutenFree">Gluten Free</label><br><br>
+        </div>
+
+        <div>
+            <label for="pizzaSize" >Choose a Size: </label><br>
+            <select name="pizzaSize" id = "pizzaSize">
+                <option>
+                    Select a dough type first
+                </option>
+            </select>
+        </div><br>
+
+        <label for="addCheese">Choose Your Cheese:</label><br>
+        <select id ="addCheese" name="addCheese">
+            <option value="normal">Normal: No Charge</option>
+            <option value="light">Light: No Charge</option>
+            <option value="extra">Extra: +$2.99</option>
+            <option value="double">Double: +$3.99</option>
+        </select><br><br>
+
+        <label for="addSauce">Choose Your Sauce:</label><br>
+        <select name="addSauce" id="addSauce">
+            <option value="regular">Regular Tomato: No Charge</option>
+            <option value="hearty">Hearty Tomato: +$.99</option>
+            <option value="bbq">BBQ Sauce: +$1.99</option>
+        </select><br>
+
+
+
+    </div>
+
+    <div id="addToppings" class="col-xs-12 col-md-6">
+
+        <label for="addToppings">Choose your toppings ($.99 ea):</label><br>
+
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="pepperoni"> Pepperoni</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99"">
+        <label for="sausage"> Sausage</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="ham"> Ham</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="bacon"> Bacon</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="salami"> Salami</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="peppers"> Peppers</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="olives"> Olives</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="jalapenos"> Jalapenos</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="mushrooms"> Mushrooms</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="pineapple"> Pineapple</label><br>
+
+        <input type="checkbox" id="checks" name="toppings" value="0.99">
+        <label for="onion"> Onion</label><br>
+            
+   
+
+
+    </div>
+
+    <input type="submit" class="btn btn-danger btn-lg" name="submit" id="submit1" value="Finished Building" >
+    </form>
+            
+</div>
+</div>
+
+</div>
+
+<!-- Billing ----------------------------------------------------------------------- -->
+
+<div id="showBilling" style="display: none">
+<div id="billing" class="row">
+
+    <div class="col-12">
+        <h2>Billing Information</h2>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+    <form id = 'billingInfo'>
+        
+        <input type="checkbox" id="billingCheck" name="billing">
+        <label for="billing"> Same as delivery information</label><br>
+
+        <label for="customerName">Name:</label><br>
+        <input type="text" id="customerName2" name="customerName2"><br>
+    
+        <label for="address">Street Address:</label><br>
+        <input type="text" id="address2" name="address"><br>
+
+        <label for="number2">Apartment, suite, or room number:</label><br>
+        <input type="text" name="number" id="number2" placeholder=" Optional"><br>
+
+        <label for="addressType2">Address Type:</label><br>
+        <select name="addressType2" id="addressType2">
+            <option value="" disabled selected>Select an address type</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="business">Business</option>
+            <option value="campus">Campus</option>
+            <option value="hotel">Hotel Room</option>
+            <option value="dorm">Dorm</option>
+            <option value="other">Other</option>
+        </select><br>
+    
+        <br><input type="text" name="otherBox2" id="otherBox2" placeholder="Please specify other" style="display: none"><br>
+        
+        <label for="city">City:</label><br>
+        <input type="text" id="city2" name="city2"><br>
+        
+        <label for="state">State:</label><br>
+        <input type="text" id="state2" name="state2"><br>
+
+        <label for="zip">Zip Code:</label><br>
+        <input type="text" id="zip2" name="zip2">
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="ccNumber">Credit Card Number</label><br>
+        <input type="text" id="ccNumber" name="ccNumber">
+        <div id="card"></div>
+
+        <label for="cvc">CVC Code:</label><br>
+        <input type="text" id="cvc" name="cvc"><br>
+
+        <label for="Exp">Expiration Month</label><br>
+        <select name="expMonth" id="expMonth">
+            <option value="" disabled selected>Select Expiration Month</option>
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sept">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+        </select><br>
+
+        <label for="Exp">Expiration Year</label><br>
+        <select name="expYear" id="expYear"><br>
+            <option value="" disabled selected>Select Expiration Year</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        </select><br>
+
+    </div>
+
+    <input type="submit" class="btn btn-danger btn-lg" name="submit" id="submit2">
+    </form>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
